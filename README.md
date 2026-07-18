@@ -22,12 +22,11 @@ The application follows standard software engineering blueprints:
 To use the To-Do List application, you can follow these steps:
 
 1. Install the necessary dependencies by running the following command:
-
-   ```bash
-   pip install flask
-   ```
+   
+ ```bash
+ pip install flask
+ ```
 2. Clone the repository:
-
 ```Bash
 git clone <repository_url>
 ```
