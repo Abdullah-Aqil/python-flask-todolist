@@ -16,3 +16,14 @@ The application follows standard software engineering blueprints:
 ├── tasks_data.json         # Permanent Disk Storage File
 └── templates/              # View Architecture Directory
     └── index.html          # Web User Interface Document
+```
+## Usage
+
+To use the To-Do List application, you can follow these steps:
+
+1. Install the necessary dependencies by running the following command:
+
+   ```bash
+   pip install flask
+   ```
+   
