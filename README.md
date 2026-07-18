@@ -26,4 +26,18 @@ To use the To-Do List application, you can follow these steps:
    ```bash
    pip install flask
    ```
+2. Clone the repository:
+
+```Bash
+git clone <repository_url>
+```
+3. Navigate to the project directory:
+
+```Bash
+cd python-flask-todolist
+```
+4. Run the application using Python:
+```Bash
+python app.py
+```
    
