@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 1: To-Do List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; background-color: #f9f9f9; text-align: center; }
+        .box { max-width: 450px; background: white; padding: 20px; border: 1px solid #ddd; margin: 0 auto; text-align: left; }
+        input[type="text"] { width: 70%; padding: 8px; }
+        .btn-add { padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        .btn-remove { padding: 3px 8px; background-color: #dc3545; color: white; border: none; cursor: pointer; font-size: 12px; }
+        .btn-exit { display: block; width: 100%; margin-top: 20px; padding: 10px; background-color: #333; color: white; border: none; cursor: pointer; font-weight: bold; }
+        ul { margin-top: 20px; padding-left: 0; list-style: none; }
+        li { padding: 8px; font-size: 16px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Project 1: To-Do List</h2>
+    <p style="font-size: 13px; color: #666;">Data Management Matrix[cite: 1]</p>
+    
+    <!-- 1. ADD Action -->
+    <form action="/add" method="POST">
+        <input type="text" name="task_text" placeholder="Finish Python assignment..." required>
+        <button type="submit" class="btn-add">Add</button>
+    </form>
+
+    <!-- 2. VIEW & REMOVE Action -->
+    <ul>
+        {% if tasks %}
+            {% for task in tasks %}
+                <li>
+                    <span>{{ loop.index }}. {{ task }}</span>
+                    <!-- Remove button passes the list index -->
+                    <form action="/remove/{{ loop.index0 }}" method="POST" style="margin: 0;">
+                        <button type="submit" class="btn-remove">Remove</button>
+                    </form>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p style="color: #999;">No tasks in the list yet.</p>
+        {% endif %}
+    </ul>
+
+    <!-- 3. EXIT Action -->
+    <form action="/exit" method="POST">
+        <button type="submit" class="btn-exit">Exit Engine</button>
+    </form>
+</div>
+
+</body>
+</html>
